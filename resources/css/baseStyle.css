@@ -1,0 +1,13 @@
+body{
+	color: #666666;
+	font-size: 2em;
+	background-color: red;
+}
+
+p{
+	color: #ffffff;
+}
+
+div {
+	border: 1px solid #eee;
+}

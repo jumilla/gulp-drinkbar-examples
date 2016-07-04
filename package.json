@@ -1,0 +1,6 @@
+{
+  "private": true,
+  "devDependencies": {
+    "gulp-drinkbar": "^0.4.1"
+  }
+}

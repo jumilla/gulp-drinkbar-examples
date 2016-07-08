@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["test-1-2.css"],"sourcesContent":["\nbody {\n\tcolor: #666666;\n\tfont-size: 2em;\n\tbackground-color: red;\n}\n\n\np {\n\tcolor: #ffffff;\n}\n\ndiv {\n\tborder: 1px solid #eee;\n}\n"],"file":"test-1-2.css","sourceRoot":"/source/"}

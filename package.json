@@ -1,6 +1,14 @@
 {
   "private": true,
   "devDependencies": {
-    "gulp-drinkbar": "^0.4.1"
+    "browserify": "^13.0.1",
+    "gulp-coffee": "^2.3.2",
+    "gulp-drinkbar": "^0.6.0",
+    "gulp-less": "^3.1.0",
+    "gulp-pug": "^3.0.3",
+    "gulp-riot": "^0.5.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-typescript": "^2.13.6"
   }
 }

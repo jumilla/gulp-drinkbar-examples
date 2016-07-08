@@ -1,0 +1,1 @@
+{"version":3,"names":[],"mappings":"","sources":["test-2-1.js"],"sourcesContent":["\nconsole.log('This file is script1.js')\n\n\nconsole.log('This file is script2.js')\n"],"file":"test-2-1.js","sourceRoot":"/source/"}

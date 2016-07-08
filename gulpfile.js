@@ -142,8 +142,12 @@ drinkbar
 	})
 
 drinkbar
+	.task('clean', ['test:clean'])
+	.define()
+
+drinkbar
 	.task('default', [
-		'test:clean',
+		'clean',
 		'test:1-1:styles_provide_path',
 		'test:1-2:styles_provide_glob',
 		'test:1-3:styles_input_file_not_found',
@@ -160,3 +164,7 @@ drinkbar
 		'test:10-1:riot',
 	])
 	.define()
+	.on('after', function () {
+		drinkbar.notify('Test finished!!', 'gulp-drinkbar')
+		drinkbar.log('Test finished')
+	})

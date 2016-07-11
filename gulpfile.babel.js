@@ -1,5 +1,7 @@
 
-var drinkbar = require('gulp-drinkbar')
+import drinkbar from 'gulp-drinkbar'
+
+
 
 drinkbar
 	.task('test:clean')
@@ -35,6 +37,18 @@ drinkbar
 	})
 
 drinkbar
+	.task('test:3-2:stylus_nib')
+	.stylus({
+		inputs: [
+			'assets/test-3/c.styl',
+		],
+		output: 'results/test-3',
+		config: {
+			nib: true,
+		},
+	})
+
+drinkbar
 	.task('test:4-1:sass')
 	.sass({
 		inputs: [
@@ -42,6 +56,21 @@ drinkbar
 			'assets/test-4/b.scss',
 		],
 		output: 'results/test-4',
+	})
+
+drinkbar
+	.task('test:4-2:sass_autoprefixer')
+	.sass({
+		inputs: [
+			'assets/test-4/c.scss',
+		],
+		output: 'results/test-4',
+		config: {
+			autoprefixer: {
+				browsers: ['last 20 versions'],
+				cascade: false,
+			},
+		},
 	})
 
 drinkbar
@@ -146,6 +175,20 @@ drinkbar
 			'assets/test-10/notfound',
 		],
 		output: 'results/test-10-3.css',
+	})
+
+drinkbar
+	.task('test:10-4:styles_autoprefixir')
+	.styles({
+		inputs: [
+			'assets/test-10/c.css',
+		],
+		output: 'results/test-10-4.css',
+		config: {
+			autoprefixer: {
+				browsers: 'last 20 versions',
+			},
+		},
 	})
 
 drinkbar
@@ -261,7 +304,9 @@ drinkbar
 		'test:1-1:copy',
 		'test:2-1:pug',
 		'test:3-1:stylus',
+		'test:3-2:stylus_nib',
 		'test:4-1:sass',
+		'test:4-2:sass_autoprefixer',
 		'test:5-1:less',
 		'test:6-1:babel_es2015',
 		'test:6-2:babel_react',
@@ -272,6 +317,7 @@ drinkbar
 		'test:10-1:styles_provide_path',
 		'test:10-2:styles_provide_glob',
 		'test:10-3:styles_input_file_not_found',
+		'test:10-4:styles_autoprefixir',
 		'test:11-1:scripts_provide_path',
 		'test:11-2:scripts_provide_glob',
 		'test:11-3:scripts_input_file_not_found',

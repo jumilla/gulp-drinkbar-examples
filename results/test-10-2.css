@@ -14,4 +14,14 @@ div {
 	border: 1px solid #eee;
 }
 
+
+p {
+	color: #ffffff;
+}
+
+div {
+	border: 1px solid #eee;
+	transition: 1s;
+}
+
 /*# sourceMappingURL=test-10-2.css.map */

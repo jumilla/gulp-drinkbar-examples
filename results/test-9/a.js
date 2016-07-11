@@ -1,12 +1,4 @@
-var GreeterA = (function () {
-    function GreeterA(greeting) {
-        this.greeting = greeting;
-    }
-    GreeterA.prototype.greet = function () {
-        return '<h1>' + this.greeting + '</h1>';
-    };
-    return GreeterA;
-}());
-var greeterA = new GreeterA('Hello, world A!');
+riot.tag2('my-a', '<p>tag A</p>', '', '', function(opts) {
+});
 
 //# sourceMappingURL=a.js.map

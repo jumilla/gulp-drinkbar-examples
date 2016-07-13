@@ -1,11 +1,12 @@
 
 import drinkbar from 'gulp-drinkbar'
+import chalk from 'chalk'
 
 
 
 drinkbar
 	.task('test:clean')
-	.erase('results/**/*')
+	.clean('results/**/*')
 
 drinkbar
 	.task('test:1-1:copy')
@@ -298,8 +299,10 @@ drinkbar
 	.task('clean', ['test:clean'])
 	.define()
 
+
+
 drinkbar
-	.task('default', [
+	.task('build', [
 		'clean',
 		'test:1-1:copy',
 		'test:2-1:pug',
@@ -333,4 +336,23 @@ drinkbar
 	.on('after', function () {
 		drinkbar.notify('Test finished!!', 'gulp-drinkbar')
 		drinkbar.log('Test finished')
+	})
+
+
+
+drinkbar
+	.task('serve')
+	.browsersync({
+		config: {
+			server: 'public',
+		},
+		watch: 'public/**/*',
+	})
+
+
+
+drinkbar
+	.task('default')
+	.define(() => {
+		drinkbar.log(chalk.black.bgGreen('Please run `gulp build` or `gulp serve`.'))
 	})

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+	<meta charset="UTF-8"/>
+	<title>BrowserSync example</title>
+	<link rel="stylesheet" href="app.css">
+</head>
+
+<body>
+	<h1>BrowserSync example</h1>
+
+	<ol>
+		<li>Run command `gulp serve` .</li>
+		<li>Load 'http://localhost:3000' on browser.</li>
+		<li>Auto reload if update 'index.html' or 'app.css' !</li>
+	</ol>
+
+	<p class="text">
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse provident laborum sit velit quas ipsam totam iusto ipsum fugiat nam similique rerum consequuntur reprehenderit nulla veritatis, odit doloribus aliquam sunt.
+	</p>
+
+	<script src="app.js"></script>	
+	<script id="__bs_script__">//<![CDATA[
+	    document.write("<script async src='http://HOST:3000/browser-sync/browser-sync-client.2.13.0.js'><\/script>".replace("HOST", location.hostname));
+	//]]></script>
+</body>
+
+</html>

@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["a.js"],"sourcesContent":["riot.tag2('my-a', '<p>tag A</p>', '', '', function(opts) {\n});\n"],"file":"a.js","sourceRoot":"/source/"}

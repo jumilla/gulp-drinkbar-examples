@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["c.css"],"sourcesContent":["p {\n  color: #fff;\n}\ndiv {\n  border: 1px solid #eee;\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n}\n"],"file":"c.css","sourceRoot":"/source/"}

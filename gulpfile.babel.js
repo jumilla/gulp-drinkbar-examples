@@ -296,6 +296,7 @@ drinkbar
 		},
 	})
 
+/*
 drinkbar
 	.task('test:17-1:rollup_provide_path')
 	.rollup({
@@ -304,6 +305,7 @@ drinkbar
 		],
 		output: 'results/test-17/a',
 	})
+*/
 
 drinkbar
 	.task('clean', ['test:clean'])

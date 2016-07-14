@@ -1,1 +1,0 @@
-{"version":3,"names":[],"mappings":"","sources":["b.js"],"sourcesContent":["var hello;\n\nhello = function() {\n  return console.log(\"Hello World B!\");\n};\n"],"file":"b.js","sourceRoot":"/source/"}

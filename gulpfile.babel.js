@@ -1,6 +1,7 @@
 
 import drinkbar from 'gulp-drinkbar'
 import chalk from 'chalk'
+import testSubdir from './assets/test-subdir/gulpfile'
 
 
 
@@ -151,40 +152,61 @@ drinkbar
 	})
 
 drinkbar
-	.task('test:10-1:styles_provide_path')
-	.styles({
-		inputs: [
-			'assets/test-10/a.css',
-			'assets/test-10/b.css',
-		],
-		output: 'results/test-10-1.css',
+	.task('test:10-1:json5')
+	.json5({
+		input: 'assets/test-10/config.json5',
+		output: 'results/test-10',
 	})
 
 drinkbar
-	.task('test:10-2:styles_provide_glob')
-	.styles({
-		inputs: [
-			'assets/test-10/*.css',
-		],
-		output: 'results/test-10-2.css',
+	.task('test:11-1:cson')
+	.cson({
+		input: 'assets/test-11/config.cson',
+		output: 'results/test-11',
 	})
 
 drinkbar
-	.task('test:10-3:styles_input_file_not_found')
-	.styles({
-		inputs: [
-			'assets/test-10/notfound',
-		],
-		output: 'results/test-10-3.css',
+	.task('test:12-1:yaml')
+	.yaml({
+		input: 'assets/test-12/config.yaml',
+		output: 'results/test-12',
 	})
 
 drinkbar
-	.task('test:10-4:styles_autoprefixir')
+	.task('test:13-1:styles_provide_path')
 	.styles({
 		inputs: [
-			'assets/test-10/c.css',
+			'assets/test-13/a.css',
+			'assets/test-13/b.css',
 		],
-		output: 'results/test-10-4.css',
+		output: 'results/test-13-1.css',
+	})
+
+drinkbar
+	.task('test:13-2:styles_provide_glob')
+	.styles({
+		inputs: [
+			'assets/test-13/*.css',
+		],
+		output: 'results/test-13-2.css',
+	})
+
+drinkbar
+	.task('test:13-3:styles_input_file_not_found')
+	.styles({
+		inputs: [
+			'assets/test-13/notfound',
+		],
+		output: 'results/test-13-3.css',
+	})
+
+drinkbar
+	.task('test:13-4:styles_autoprefixir')
+	.styles({
+		inputs: [
+			'assets/test-13/c.css',
+		],
+		output: 'results/test-13-4.css',
 		config: {
 			autoprefixer: {
 				browsers: 'last 20 versions',
@@ -193,72 +215,72 @@ drinkbar
 	})
 
 drinkbar
-	.task('test:11-1:scripts_provide_path')
+	.task('test:14-1:scripts_provide_path')
 	.scripts({
 		inputs: [
-			'assets/test-11/a.js',
-			'assets/test-11/b.js',
+			'assets/test-14/a.js',
+			'assets/test-14/b.js',
 		],
-		output: 'results/test-11-1.js',
+		output: 'results/test-14-1.js',
 	})
 
 drinkbar
-	.task('test:11-2:scripts_provide_glob')
+	.task('test:14-2:scripts_provide_glob')
 	.scripts({
 		inputs: [
-			'assets/test-11/*.js',
+			'assets/test-14/*.js',
 		],
-		output: 'results/test-11-2.js',
+		output: 'results/test-14-2.js',
 	})
 
 drinkbar
-	.task('test:11-3:scripts_input_file_not_found')
+	.task('test:14-3:scripts_input_file_not_found')
 	.scripts({
 		inputs: [
-			'assets/test-11/notfound',
+			'assets/test-14/notfound',
 		],
-		output: 'results/test-11-3.js',
+		output: 'results/test-14-3.js',
 	})
 
 drinkbar
-	.task('test:12-1:browserify_provide_path')
+	.task('test:15-1:browserify_provide_path')
 	.browserify({
 		inputs: [
-			'assets/test-12/a.js',
-			'assets/test-12/b.js',
+			'assets/test-15/a.js',
+			'assets/test-15/b.js',
 		],
-		output: 'results/test-12-1.js',
+		output: 'results/test-15-1.js',
 	})
 
 drinkbar
-	.task('test:12-2:browserify_react')
+	.task('test:15-2:browserify_react')
 	.browserify({
 		inputs: [
-			'assets/test-12/c.jsx',
+			'assets/test-15/c.jsx',
 		],
-		output: 'results/test-12-2.js',
+		output: 'results/test-15-2.js',
 		config: {
 			babelify: { presets: ['es2015', 'react'] },
 		},
 	})
 
 drinkbar
-	.task('test:13-1:webpack_provide_path')
+	.task('test:16-1:webpack_provide_path')
 	.webpack({
 		inputs: [
-			'assets/test-13/a.js',
-			'assets/test-13/b.js',
+			'assets/test-16/a.js',
+			'assets/test-16/b.js',
 		],
-		output: 'results/test-13-1.js',
+		output: 'results/test-16-1.js',
 	})
 
 drinkbar
-	.task('test:13-2:webpack_react')
+	.task('test:16-2:webpack_react')
 	.webpack({
 		inputs: [
-			'assets/test-13/c.jsx',
+			'assets/test-16/c.jsx',
 		],
-		output: 'results/test-13-2.js',
+		output: 'results/test-16-2.js',
 		config: {
 			module: {
 				loaders: [
@@ -275,24 +297,12 @@ drinkbar
 	})
 
 drinkbar
-	.task('test:14-1:json5')
-	.json5({
-		input: 'assets/test-14/config.json5',
-		output: 'results/test-14',
-	})
-
-drinkbar
-	.task('test:15-1:cson')
-	.cson({
-		input: 'assets/test-15/config.cson',
-		output: 'results/test-15',
-	})
-
-drinkbar
-	.task('test:16-1:yaml')
-	.yaml({
-		input: 'assets/test-16/config.yaml',
-		output: 'results/test-16',
+	.task('test:17-1:rollup_provide_path')
+	.rollup({
+		inputs: [
+			'assets/test-17/*.js',
+		],
+		output: 'results/test-17/a',
 	})
 
 drinkbar
@@ -317,20 +327,22 @@ drinkbar
 		'test:7-1:coffeescript',
 		'test:8-1:typescript',
 		'test:9-1:riot',
-		'test:10-1:styles_provide_path',
-		'test:10-2:styles_provide_glob',
-		'test:10-3:styles_input_file_not_found',
-		'test:10-4:styles_autoprefixir',
-		'test:11-1:scripts_provide_path',
-		'test:11-2:scripts_provide_glob',
-		'test:11-3:scripts_input_file_not_found',
-		'test:12-1:browserify_provide_path',
-		'test:12-2:browserify_react',
-		'test:13-1:webpack_provide_path',
-		'test:13-2:webpack_react',
-		'test:14-1:json5',
-		'test:15-1:cson',
-		'test:16-1:yaml',
+		'test:10-1:json5',
+		'test:11-1:cson',
+		'test:12-1:yaml',
+		'test:13-1:styles_provide_path',
+		'test:13-2:styles_provide_glob',
+		'test:13-3:styles_input_file_not_found',
+		'test:13-4:styles_autoprefixir',
+		'test:14-1:scripts_provide_path',
+		'test:14-2:scripts_provide_glob',
+		'test:14-3:scripts_input_file_not_found',
+		'test:15-1:browserify_provide_path',
+		'test:15-2:browserify_react',
+		'test:16-1:webpack_provide_path',
+		'test:16-2:webpack_react',
+//		'test:17-1:rollup_provide_path',
+		'test:subdir-1:directory_method_and_root_path',
 	])
 	.define()
 	.on('after', function () {

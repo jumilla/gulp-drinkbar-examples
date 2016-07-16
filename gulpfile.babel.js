@@ -250,6 +250,7 @@ drinkbar
 			'assets/test-15/b.js',
 		],
 		output: 'results/test-15-1.js',
+		config: {},
 	})
 
 drinkbar
@@ -272,6 +273,7 @@ drinkbar
 			'assets/test-16/b.js',
 		],
 		output: 'results/test-16-1.js',
+		config: {},
 	})
 
 drinkbar
@@ -281,19 +283,7 @@ drinkbar
 			'assets/test-16/c.jsx',
 		],
 		output: 'results/test-16-2.js',
-		config: {
-			module: {
-				loaders: [
-					{
-						test: /\.jsx$/,
-						loader: 'babel-loader',
-						query: {
-							presets: ['es2015', 'react'],
-						},
-					}
-				],
-			},
-		},
+		config: {},
 	})
 
 drinkbar
@@ -301,7 +291,7 @@ drinkbar
 	.rollup({
 		input: 'assets/test-17/es5.js',
 		output: 'results/test-17-1.js',
-//		config: {},
+		config: {},
 	})
 
 drinkbar
@@ -309,8 +299,20 @@ drinkbar
 	.rollup({
 		input: 'assets/test-17/es6.js',
 		output: 'results/test-17-2.js',
-//		config: {},
+		config: {},
 	})
+
+/*
+drinkbar
+	.task('test:17-3:rollup_react')
+	.rollup({
+		input: 'assets/test-17/react.js',
+		output: 'results/test-17-3.js',
+		config: {
+			plugins: [nodeResolve({jsnext: true}, commonjs(), babel())],
+		},
+	})
+*/
 
 drinkbar
 	.task('clean', ['test:clean'])
@@ -350,6 +352,7 @@ drinkbar
 		'test:16-2:webpack_react',
 		'test:17-1:rollup_es5',
 		'test:17-2:rollup_es6',
+//		'test:17-3:rollup_react',
 		'test:subdir-1:directory_method_and_root_path',
 	])
 	.define()

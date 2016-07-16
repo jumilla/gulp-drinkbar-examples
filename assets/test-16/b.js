@@ -1,2 +1,4 @@
 
-console.log('This file is script2.js')
+let script = 'b.js'
+
+console.log('This file is ' + script)

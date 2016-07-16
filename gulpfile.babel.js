@@ -296,16 +296,21 @@ drinkbar
 		},
 	})
 
-/*
 drinkbar
-	.task('test:17-1:rollup_provide_path')
+	.task('test:17-1:rollup_es5')
 	.rollup({
-		inputs: [
-			'assets/test-17/*.js',
-		],
-		output: 'results/test-17/a',
+		input: 'assets/test-17/es5.js',
+		output: 'results/test-17-1.js',
+//		config: {},
 	})
-*/
+
+drinkbar
+	.task('test:17-2:rollup_es6')
+	.rollup({
+		input: 'assets/test-17/es6.js',
+		output: 'results/test-17-2.js',
+//		config: {},
+	})
 
 drinkbar
 	.task('clean', ['test:clean'])
@@ -343,7 +348,8 @@ drinkbar
 		'test:15-2:browserify_react',
 		'test:16-1:webpack_provide_path',
 		'test:16-2:webpack_react',
-//		'test:17-1:rollup_provide_path',
+		'test:17-1:rollup_es5',
+		'test:17-2:rollup_es6',
 		'test:subdir-1:directory_method_and_root_path',
 	])
 	.define()
